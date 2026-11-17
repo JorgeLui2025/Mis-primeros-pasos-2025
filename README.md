@@ -1,2 +1,2 @@
 # Mis-primeros-pasos
-mis primeros proyectos de programación
+## mis primeros proyectos de programación
