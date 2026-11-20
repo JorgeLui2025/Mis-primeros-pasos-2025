@@ -1,186 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle Especial</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Para Andrea</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(to bottom, #ffefba, #ffffff);
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        background: linear-gradient(to bottom, #ffefba, #ffffff);
+        margin: 0;
+        padding: 0;
+      }
 
-        h1 {
-            margin: 20px 0;
-            color: #e85d75;
-        }
+      h1 {
+        margin: 20px 0;
+        color: #e85d75;
+      }
 
-        .images {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 30px 0;
-        }
+      .images {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 30px 0;
+      }
 
-        .images img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+      .images img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
 
-        .images img:hover {
-            transform: scale(1.1);
-        }
+      .images img:hover {
+        transform: scale(1.1);
+      }
 
-        .buttons {
-            position: fixed;
-            bottom: 80px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+      .buttons {
+        position: fixed;
+        bottom: 80px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
 
-        .buttons button {
-            background-color: #e85d75;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: 150px;
-        }
+      .buttons button {
+        background-color: #e85d75;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 150px;
+      }
 
-        .buttons button:hover {
-            background-color: #d14c62;
-        }
+      .buttons button:hover {
+        background-color: #d14c62;
+      }
 
-        footer {
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 14px;
-            color: #444;
-        }
+      footer {
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #444;
+      }
 
-        /* Modal para imágenes grandes */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
-        }
+      /* Modal para imágenes grandes */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      }
 
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
+      .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
 
-        .modal .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 40px;
-            color: white;
-            cursor: pointer;
-        }
+      .modal .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+      }
 
-        .modal .close:hover {
-            color: #e85d75;
-        }
+      .modal .close:hover {
+        color: #e85d75;
+      }
     </style>
-</head>
-<body>
-    <h1>Esto es un detalle especial para alguien especial como tú Andrea </h1>
+  </head>
+  <body>
+    <h1>Esto es un detalle especial para alguien especial como tú Andrea</h1>
 
     <!-- Contenedor de imágenes -->
     <div class="images">
-        <img src="01 andrea.jpg" alt="Imagen 1">
-        <img src="abel.png" alt="Imagen 2">
-        <img src="andreaaa.jpg" alt="Imagen 3">
+      <img src="01 andrea.jpg" alt="Imagen 1" />
+      <img src="abel.png" alt="Imagen 2" />
+      <img src="andreaaa.jpg" alt="Imagen 3" />
     </div>
 
     <!-- Modal para previsualizar imágenes -->
     <div class="modal" id="imageModal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img id="modalImage" src="" alt="Imagen grande">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="Imagen grande" />
     </div>
 
     <!-- Botones en la parte inferior -->
     <div class="buttons">
-        <button onclick="window.open('https://youtu.be/LPjZoJb-uFE', '_blank')">Ver Video</button>
-        <button onclick="window.open('https://drive.google.com/file/d/1t_HA81jsjOXnYhw7rlx8Gwu4BpHNUQGc/view?usp=sharing', '_blank')">Ver Otros Regalos</button>
-        <button id="musicButton">Pausar Música</button>
+      <button onclick="window.open('https://youtu.be/LPjZoJb-uFE', '_blank')">
+        Ver Video
+      </button>
+      <button
+        onclick="
+          window.open(
+            'https://drive.google.com/file/d/1t_HA81jsjOXnYhw7rlx8Gwu4BpHNUQGc/view?usp=sharing',
+            '_blank',
+          )
+        "
+      >
+        Ver Otros Regalos
+      </button>
+      <button id="musicButton">Pausar Música</button>
     </div>
 
     <!-- Texto inferior -->
     <footer>
-        <p>Espero que este pequeño detalle te haga sonreír y recuerdes lo especial que eres para mí, gracias por darme tu tiempo .</p>
+      <p>
+        Espero que este pequeño detalle te haga sonreír y recuerdes lo especial
+        que eres para mí, gracias por darme tu tiempo .
+      </p>
     </footer>
     <!-- Música de fondo -->
     <audio id="backgroundMusic" loop autoplay>
-        <source src="SHINee - Stand By Me (Traducida al español) - memyselfandjin.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
+      <source
+        src="SHINee - Stand By Me (Traducida al español) - memyselfandjin.mp3"
+        type="audio/mpeg"
+      />
+      Tu navegador no soporta el elemento de audio.
     </audio>
 
     <script>
-        // Selección de elementos
-        const images = document.querySelectorAll('.images img');
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        const music = document.getElementById('backgroundMusic');
-        const musicButton = document.getElementById('musicButton');
+      // Selección de elementos
+      const images = document.querySelectorAll(".images img");
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+      const music = document.getElementById("backgroundMusic");
+      const musicButton = document.getElementById("musicButton");
 
-        // Evento para agrandar imágenes
-        images.forEach(image => {
-            image.addEventListener('click', () => {
-                modal.style.display = 'flex'; // Muestra el modal
-                modalImage.src = image.src; // Cambia la imagen del modal
-            });
+      // Evento para agrandar imágenes
+      images.forEach((image) => {
+        image.addEventListener("click", () => {
+          modal.style.display = "flex"; // Muestra el modal
+          modalImage.src = image.src; // Cambia la imagen del modal
         });
+      });
 
-        // Cierra el modal
-        function closeModal() {
-            modal.style.display = 'none';
+      // Cierra el modal
+      function closeModal() {
+        modal.style.display = "none";
+      }
+
+      // Cierra el modal si se hace clic fuera de la imagen
+      modal.addEventListener("click", (e) => {
+        if (e.target !== modalImage) {
+          closeModal();
         }
+      });
 
-        // Cierra el modal si se hace clic fuera de la imagen
-        modal.addEventListener('click', (e) => {
-            if (e.target !== modalImage) {
-                closeModal();
-            }
-        });
-
-        // Pausar/reproducir música
-        musicButton.addEventListener('click', () => {
-            if (music.paused) {
-                music.play();
-                musicButton.textContent = "Pausar Música";
-            } else {
-                music.pause();
-                musicButton.textContent = "Reproducir Música";
-            }
-        });
+      // Pausar/reproducir música
+      musicButton.addEventListener("click", () => {
+        if (music.paused) {
+          music.play();
+          musicButton.textContent = "Pausar Música";
+        } else {
+          music.pause();
+          musicButton.textContent = "Reproducir Música";
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
